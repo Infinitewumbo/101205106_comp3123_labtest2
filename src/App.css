@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1558486012-81714731dca9?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.app-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 3rem;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.app-container:hover {
+  transform: translateY(-5px);
+}
+
+h1 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.search-form {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  margin-bottom: 30px;
+  height: 50px;        
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;           
+  padding: 0 20px;         
+  border: none;
+  outline: none;
+  border-radius: 25px 0 0 25px;
+  background: rgba(255, 255, 255, 0.9);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+.search-button {
+  height: 100%;         
+  padding: 0 30px;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  background: #ff7e5f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search-button:hover {
+  background: #feb47b;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: #ffcccb;
+  background: rgba(255, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.weather-card {
+  margin-top: 20px;
+}
+
+.weather-header h2 {
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.weather-header p {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.weather-icon-container img {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+
+.weather-description {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin-top: -15px;
+  font-weight: 300;
+}
+
+.temperature {
+  font-size: 5rem;
+  font-weight: 600;
+  margin: 10px 0;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.details div {
+  display: flex;
+  flex-direction: column;
+}
+
+.details span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.details small {
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
