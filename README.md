@@ -27,3 +27,5 @@ This project is a React application that displays real-time weather information 
 
 ## API Endpoint Used
 `http://api.openweathermap.org/data/2.5/weather?q={city}&appid={APIkey}&units=metric`
+
+<img width="385" height="659" alt="image" src="https://github.com/user-attachments/assets/e0969773-ddc9-427f-a59d-2d61bf104b8c" />
