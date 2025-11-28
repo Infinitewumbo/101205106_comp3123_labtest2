@@ -14,7 +14,7 @@ function App() {
     setError(null);
     try {
       const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
 
       const response = await axios.get(url);
       setWeatherData(response.data);
